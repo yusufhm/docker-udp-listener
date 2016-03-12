@@ -1,9 +1,9 @@
 import socket
-
+import os
 
 
 UDP_IP = "0.0.0.0"
-UDP_PORT = 5005
+UDP_PORT = int(os.environ['UDPPORT'])
 
 print "Listening on UDP port",UDP_PORT
 
