@@ -1,7 +1,9 @@
-FROM ubuntu:latest
+FROM python:2.7
 MAINTAINER	mendhak <docker@mendhak.com>
 
-ADD run.sh /run.sh
-CMD ["/run.sh"]
 
+ADD udplistener.py /udplistener.py
+CMD ["python", "-u","/udplistener.py"]
+
+EXPOSE 5005
 EXPOSE 5005/udp
