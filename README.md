@@ -1,5 +1,5 @@
 # mendhak/udp-listener
-Docker image that listens on port 5005, outputs to log.
+Docker image that listens on UDP port 5005, outputs to log.
 
 ### Start it
 
@@ -7,7 +7,7 @@ By default, listens on port 5005
 
     docker run -p 0.0.0.0:5005:5005 -p 0.0.0.0:5005:5005/udp --name udp-listener mendhak/udp-listener
 
-You can make it listen on port 4444
+You can make it listen on another port
 
     docker run -p 0.0.0.0:4444:4444 -p 0.0.0.0:4444:4444/udp -e UDPPORT=4444 --name udp-listener mendhak/udp-listener
 
@@ -33,3 +33,7 @@ udp:
   - "0.0.0.0:4001:4001/udp"
 
 ```
+
+View its logs:
+
+    docker logs my-udp-listener
