@@ -4,14 +4,12 @@ Docker image that listens on port 5005, outputs to log.
 ### Start it
 
 
-    docker run -p 5005:5005/udp --name tcp-udp-test mendhak/udp-listener
-
+    docker run -p 5005:5005/udp --name udp-listener mendhak/udp-listener
 
 #### Test it
 
-docker logs
+In another terminal:
 
-```
-$ nc -u (CONTAINER_IP_ADDRESS) 5678
-> Hello world # Same text will be displayed on the container log.
-```
+    nc -u localhost 5005
+
+And start sending data.
