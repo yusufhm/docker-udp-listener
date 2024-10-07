@@ -1,16 +1,8 @@
-FROM gliderlabs/alpine:3.3
-MAINTAINER	mendhak <docker@mendhak.com>
+FROM python
 
-RUN apk add --update \
-    python \
-    python-dev \
-    py-pip \
-    build-base \
-  && pip install virtualenv \
-  && rm -rf /var/cache/apk/*
+LABEL org.opencontainers.image.authors="mendhak <docker@mendhak.com>,yusufhm"
 
-
-ENV UDPPORT 5005
+ENV UDPPORT=5005
 ADD udplistener.py /udplistener.py
 CMD ["python", "-u","/udplistener.py"]
 
